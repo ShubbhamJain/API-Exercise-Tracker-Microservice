@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercise Tracker</title>
+  </head>
+
+  <body>
+    <main class="container text-center p-3 mt-4">
+      <h1 id="head" class="pb-3 text-white">Exercise Tracker API</h1>
+
+      <div class="row mb-3">
+        <div id="form1" class="col-6 mx-auto">
+          <form
+            action="/new-user"
+            id="newUser"
+            method="POST"
+            class="form-group m-3"
+          >
+            <h3>Add New User</h3>
+            <input
+              type="text"
+              id="uName"
+              name="username"
+              placeholder="UserName"
+              class="form-control mb-3"
+              required
+            />
+            <input
+              type="submit"
+              value="Add User"
+              class="btn btn-primary btn-lg"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div id="form2" class="col-6 mx-auto">
+          <form
+            action="/exercise/add"
+            id="addEx"
+            method="POST"
+            class="form-group m-3"
+          >
+            <h3>Add Exercises</h3>
+            <input
+              type="text"
+              name="userId"
+              id="uId"
+              placeholder="UserId*"
+              class="form-control mb-3"
+              required
+            />
+            <input
+              type="text"
+              name="type"
+              id="exDes"
+              placeholder="Type*"
+              class="form-control mb-3"
+              required
+            />
+            <input
+              type="text"
+              name="duration"
+              id="exDUr"
+              placeholder="Duration(In Minutes)*"
+              class="form-control mb-3"
+              required
+            />
+            <input
+              type="date"
+              name="date"
+              id="exDUr"
+              placeholder="Date"
+              class="form-control mb-3"
+            />
+            <input
+              type="submit"
+              value="Add Exercise"
+              class="btn btn-primary btn-lg"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div id="info1" class="text-white mb-3">
+        <h3>To get users-</h3>
+        <p>
+          <strong>To get all users : </strong>
+          <code>
+            [baseurl]/exercise/log?{userId}[&amp;from][&amp;to][&amp;limit]
+          </code>
+        </p>
+      </div>
+
+      <div id="info2" class="text-white">
+        <h3>To Get Info -</h3>
+        <p>
+          <strong>GET users's exercise log : </strong>
+          <code>
+            [baseurl]/users
+          </code>
+        </p>
+        <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
+        <p>
+          <strong>from, to</strong> = dates (yyyy-mm-dd);
+          <strong>limit</strong> = number
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
